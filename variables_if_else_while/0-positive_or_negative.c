@@ -4,7 +4,6 @@
 
 /**
  * main - checks if number is positive or negative
- * @n: random number
  *
  * Description: Uses if, elif and else statements to check if
  * the number is positive or negative or 0.
