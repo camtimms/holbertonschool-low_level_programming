@@ -21,29 +21,33 @@ void times_table(void)
 			{
 				if (result < 10)
 				{
-					_putchar('0' + result);
-					_putchar('\n');
+				_putchar(' ');
+				_putchar('0' + result);
+				_putchar('\n');
 				}
 				else if (result < 100)
 				{
-					_putchar('0' + result / 10);
-					_putchar('0' + result % 10);
-					_putchar('\n');
+				_putchar('0' + result / 10);
+				_putchar('0' + result % 10);
+				_putchar('\n');
 				}
 			}
-			else if (result < 10)
+			else
 			{
+				if (result < 10)
+				{
+				_putchar(' ');
 				_putchar('0' + result);
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
-			}
-			else if (result < 100)
-			{
+				}
+				else if (result < 100)
+				{
 				_putchar('0' + result / 10);
 				_putchar('0' + result % 10);
 				_putchar(',');
 				_putchar(' ');
+				}
 			}
 		}
 	}
