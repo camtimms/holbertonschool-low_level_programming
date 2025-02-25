@@ -13,9 +13,8 @@ void print_rev(char *s)
 	int n = 0;
 
 	/* Find location in memory */
-	while (*s)
+	while (s[n])
 	{
-		s++;
 		n++;
 	}
 	/* n should be the lenth of the str */
