@@ -16,8 +16,7 @@ void puts_half(char *str)
 	while (str[n] != '\0')
 		n++;
 
-	/* Remove null char */
-	n = n - 1;
+	/* Save length */
 	max_length = n;
 
 	/* Find midpoint */
