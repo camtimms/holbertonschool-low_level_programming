@@ -11,7 +11,7 @@
 void rev_string(char *s)
 {
 	int start = 0;
-	int end;
+	int end = 0;
 	char tmp;
 
 	/* Finds length of string */
