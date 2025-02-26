@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _puts2 - Prints every second character of a string
+ * puts2 - Prints every second character of a string
  *
  * @str: String
  * Description: Prints a string by incrementing a pointer by 2
@@ -9,10 +9,13 @@
  */
 void puts2(char *str)
 {
-	while (*str)
+	int n = 0;
+	
+	/* Use index based approach to not jump past the null terminatot */
+	while (str[n] != '\0')
 	{
-		_putchar(*str);
-		str = str + 2;
+		_putchar(str[n]);
+		n = n + 2;
 	}
 	_putchar('\n');
 }
