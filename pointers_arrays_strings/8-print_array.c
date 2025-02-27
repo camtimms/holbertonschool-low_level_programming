@@ -15,9 +15,16 @@ void print_array(int *a, int n)
 {
 	int start = 0;
 
-	while (start < n)
+	/* Remove 1 from n since we start from 0 */
+	n = n - 1;
+
+	while (start <= n)
 	{
-		printf("%d", a[start]);
+		if (start == n)
+			printf("%d", a[start]);
+		else
+			printf("%d, ", a[start]);
+
 		start++;
 	}
 	printf("\n");
