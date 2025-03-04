@@ -13,7 +13,7 @@ char *string_toupper(char *s)
 {
 	int n = 0; /* Pointer */
 
-	while (s[n] != '\n')
+	while (s[n] != '\0')
 	{
 		if (s[n] >= 'a' && s[n] <= 'z')
 			s[n] = 'A' + (s[n] - 'a');
