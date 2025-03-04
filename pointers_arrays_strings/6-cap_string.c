@@ -14,11 +14,14 @@ char *cap_string(char *str)
 {
 	int n = 0; /* Pointer */
 	int i = 0; /* Pointer for sep */
-	char sep[] = " /t/n,;.!?\"(){}"; /* Separators */
+	char sep[] = " \t\n,;.!?\"(){}"; /* Separators */
+
+	if (str[n] >= 'a' && str[n] <= 'z')
+		str[n] = 'A' + (str[n] - 'a');
 
 	while (str[n] != '\0')
 	{
-		if (str[n] <= 'a' && str[n] >= 'z')
+		if (str[n] >= 'a' && str[n] <= 'z')
 		{
 			i = 0;
 			while (sep[i] != '\0')
