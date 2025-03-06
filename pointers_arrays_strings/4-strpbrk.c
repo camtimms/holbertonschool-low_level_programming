@@ -6,12 +6,10 @@
  * @s: String
  * @accept: Accepted bytes
  *
- * Description: The strpbrk() function searches for the first occurrence in a
- * string of any of the specified characters and returns a pointer to that
- * position in the string.
+ * Description: This function compares the string accept and finds the first
+ * occourance of one of the characters in s
  *
- * Return: A char type pointer to the position of the first occurrence of any
- * of the search characters, or NULL if none of the characters were found.
+ * Return: pointer s.
  */
 
 char *_strpbrk(char *s, char *accept)
