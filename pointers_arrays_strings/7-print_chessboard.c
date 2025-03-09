@@ -13,15 +13,15 @@ void print_chessboard(char (*a)[8])
 {
 	int rank = 0, file = 0;
 
-	while (i < 8)
+	while (rank < 8)
 	{
-		j = 0;
-		while (j < 8)
+		file = 0;
+		while (file < 8)
 		{
-			_putchar(a[file][rank]);
-			j++;
+			_putchar(a[rank][file]);
+			file++;
 		}
 		_putchar('\n');
-		i++;
+		rank++;
 	}
 }
