@@ -8,7 +8,7 @@
  *
  * Description: Returns the value x raised to the power y.
  *
- * Returns: Result (int), Error (-1)
+ * Return: Result (int), Error (-1)
  */
 
 int _pow_recursion(int x, int y)
