@@ -3,5 +3,6 @@
 
 int _putchar(char c);
 int mynameis(char *argc[]);
+int args(int argc);
 
 #endif
