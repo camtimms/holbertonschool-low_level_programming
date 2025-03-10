@@ -17,6 +17,15 @@ int mynameis(char *argv[])
 	return (0);
 }
 
+/**
+ * main - runs the function
+ *
+ * @argc: Number of arguments
+ * @argv: Argument vector
+ *
+ * Return: Alwyas 0
+ */
+
 int main(int argc, char *argv[])
 {
 	(void)argc; /* Surpresses parameter warning */
