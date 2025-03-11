@@ -16,7 +16,7 @@
 char *create_array(unsigned int size, char c)
 {
 	char *arr;
-	unsigned int i; /* Iterator */
+	unsigned int i = 0; /* Iterator */
 
 	if (size == 0)
 		return (NULL);
