@@ -28,16 +28,13 @@ char *str_concat(char *s1, char *s2)
 
 	/* Find length of each string */
 	while (s1[l1] != '\0')
-	  	l1++;
-
+		l1++;
 	while (s2[l2] != '\0')
-		l2++;;
-
+		l2++;
 	total_l = l1 + l2 + 1;
 	/* Add 1 to account for /0 at end of the string */
 
 	concat = malloc(total_l);
-
 	if (concat == NULL)
 		return (NULL);
 
@@ -55,7 +52,7 @@ char *str_concat(char *s1, char *s2)
 		i++;
 	}
 
-	concat[total_l - 1] = '\0'; /* Add Null to end of string */
-
-	return(concat);
+	concat[total_l - 1] = '\0';
+	/* Add Null to end of string */
+	return (concat);
 }
