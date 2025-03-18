@@ -30,16 +30,16 @@ int main(int argc, char *argv[])
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	
+
 	operator = get_op_func(argv[2]);
-	result = operator(num1, num2);
-	
-	if (operator == 0)
+
+	if (operator == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
+	result = operator(num1, num2);
 	printf("%d\n", result);
 
 	return (0);
