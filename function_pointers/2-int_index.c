@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#include <stdlib.h>
 
 /**
  * int_index - Searches through an array and finds the first occurrence of an
@@ -18,6 +19,9 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i = 0;
 	int flag;
+
+	if (array == NULL || cmp == NULL)
+		return (NULL);
 
 	if (size <= 0)
 		return (-1);
