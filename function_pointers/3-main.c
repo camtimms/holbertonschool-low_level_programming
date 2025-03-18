@@ -20,29 +20,24 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
-	char *operation = argv[2];
+	int (*operator)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (98);
-	}
-
-	if (argv[3] == 0)
-	{
-		printf("Error\n");
-		return (100);
+		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-
-	result = get_op_func(operation)(num1, num2);
-
-	if (result == NULL)
+	
+	operator = get_op_func(argv[2]);
+	result = operator(num1, num2);
+	
+	if (operator == 0)
 	{
 		printf("Error\n");
-		return (99);
+		exit(99);
 	}
 
 	printf("%d\n", result);
