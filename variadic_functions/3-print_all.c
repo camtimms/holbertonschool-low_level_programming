@@ -25,15 +25,16 @@ void print_all(const char * const format, ...)
 	{
 		j = 0;
 
-		while (format[j] != '\0')
+		while (pfs[j].pf != '\0')
 		{
-			if (format[j] == get_print_func_fp[i].pf
-				get_print_func_fp[i].f(va_args);	
+			if (format[i] == pfs[j].pf
+				get_print_func_fp[j].f(va_args(args, char *);
 			j++;
 		}
 	i++;
 
 	va_end(args);
+	}
 }
 
 /**
@@ -54,8 +55,7 @@ char (*get_print_func_fp)(char *s)
 		{"f", print_float},
 		{"s", print_str},
 		{NULL, NULL}
-	}
-
+	};
 	int i = 0;
 
 	while (pfs[i].pf != NULL)
@@ -64,7 +64,7 @@ char (*get_print_func_fp)(char *s)
 			return (pfs[i].f);
 		i++;
 	}
-	return(pfs[i].f};
+	return (pfs[i].f);
 }
 
 /**
@@ -95,7 +95,8 @@ void print_char(char c);
 void print_int(char *s)
 {
 	int n;
-	n = atoi(s)
+
+	n = atoi(s);
 	printf("%d", n);
 }
 
@@ -112,6 +113,7 @@ void print_int(char *s)
 void print_float(char *s)
 {
 	float n;
+
 	n = atof(s);
 	printf("%f", n);
 }
@@ -131,4 +133,4 @@ void print_str(char *s)
 	if (s == NULL)
 		s = "(nil)";
 	printf("%s", s);
-}	
+}
