@@ -28,7 +28,7 @@ void print_all(const char * const format, ...)
 		if (print_func)
 		{
 			print_func(args);
-			if (format[i] + 1 != '\0')
+			if (format[i + 1] != '\0')
 				printf(", ");
 		}
 		i++;
