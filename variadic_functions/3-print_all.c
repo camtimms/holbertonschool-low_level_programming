@@ -16,7 +16,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	void (*get_print_func_fp)(char *s);
+	int (*print_func)(va_list);
 	int i = 0, j = 0;
 
 	va_start(args, format);
@@ -25,10 +25,13 @@ void print_all(const char * const format, ...)
 	{
 		j = 0;
 
-		while (pfs[j].pf != '\0')
+		while (pfs[j].c != '\0')
 		{
 			if (format[i] == pfs[j].c)
-				print_func = get_print_func_fp[i].f(args);
+			{
+				print_func = get_print_func_fp[i].f;
+				print_func(args);
+			}
 			j++;
 		}
 	i++;
