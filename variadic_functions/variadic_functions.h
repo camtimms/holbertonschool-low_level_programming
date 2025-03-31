@@ -7,9 +7,9 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 
 typedef struct print_func{
-	char *pf;
+	char *c;
 	char (*f)(char *s);
-};
+}print_func;
 
 void print_char(char *s);
 void print_int(char *s);
