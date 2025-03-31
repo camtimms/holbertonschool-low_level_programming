@@ -13,17 +13,24 @@
  * Return: print function
  */
 
-int (*get_print_func_fp(char c))(va_list)
+void (*get_print_func_fp(char c))(va_list)
 {
+	print_func_t pfs[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_str},
+		{'\0', NULL}
+	};
 	int i = 0;
 
 	while (pfs[i].c != '\0')
 	{
-		if (c == *pfs[i].c)
+		if (c == pfs[i].c)
 			return (pfs[i].f);
 		i++;
 	}
-	return (pfs[i].f);
+	return (NULL);
 }
 
 /**
@@ -36,11 +43,11 @@ int (*get_print_func_fp(char c))(va_list)
  * Return: void
  */
 
-void print_char(va_list args);
+void print_char(va_list args)
 {
 	char c = va_arg(args, int);
 
-	_putchar(c);
+	putchar(c);
 }
 
 /**

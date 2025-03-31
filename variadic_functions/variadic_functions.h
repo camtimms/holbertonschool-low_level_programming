@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
@@ -24,19 +25,11 @@ typedef struct print_func
 	void (*f)(va_list);
 } print_func_t;
 
-print_func_t pfs[] = {
-	{'c', print_char},
-	{'i', print_int},
-	{'f', print_float},
-	{'s', print_str},
-	{'\0', NULL}
-};
-
 void print_char(va_list args);
 void print_int(va_list args);
 void print_float(va_list args);
 void print_str(va_list args);
 void print_all(const char * const format, ...);
-int (*get_print_func_fp(char c))(va_list);
+void (*get_print_func_fp(char c))(va_list);
 
 #endif
