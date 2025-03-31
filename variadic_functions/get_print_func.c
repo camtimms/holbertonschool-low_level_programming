@@ -6,7 +6,7 @@
 /**
  * get_print_func_fp - Function pointer to the right print function
  *
- * @get_print_func_fp: String from format to compare
+ * @c: Character from format to compare
  *
  * Description: Function pointer to the right print function
  *
@@ -15,13 +15,6 @@
 
 int (*get_print_func_fp(char c))(va_list)
 {
-	print_func pfs[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_str},
-		{'\0', NULL}
-	};
 	int i = 0;
 
 	while (pfs[i].c != '\0')
@@ -79,7 +72,7 @@ void print_int(va_list args)
 
 void print_float(va_list args)
 {
-	float n = va_arg(args, float);
+	double n = va_arg(args, double);
 
 	printf("%f", n);
 }
