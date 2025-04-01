@@ -7,7 +7,7 @@
  * @head: Pointer to head of the list
  *
  * Description: Frees a linked list from memory
- * 
+ *
  * Return: void
  */
 
@@ -18,5 +18,5 @@ void free_list(list_t *head)
 
 	free_list(head->next);
 	free(head->str);
-	free(head);	
-}	
+	free(head);
+}
