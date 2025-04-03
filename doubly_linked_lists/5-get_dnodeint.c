@@ -22,6 +22,8 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	while (i < index)
 	{
+		if (curr_node->next == NULL)
+			return (NULL);
 		curr_node = curr_node->next;
 		i++;
 	}
