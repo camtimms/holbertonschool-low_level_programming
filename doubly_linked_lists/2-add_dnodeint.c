@@ -7,9 +7,9 @@
  * @head: Double pointer containing the head/start of the doubly linked list
  * @n: Interger, Data to include in node
  *
- * Description
+ * Description: Add a node to the start of a doubly linked list
  *
- * Return: Address of new element () or fail (NULL);
+ * Return: Address of new element (new_node) or fail (NULL);
  */
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
