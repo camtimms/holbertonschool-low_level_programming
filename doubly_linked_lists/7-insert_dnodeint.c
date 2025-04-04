@@ -15,38 +15,39 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node = (dlistint_t *)malloc(sizeof(dlistint_t));
-	dlistint_t *curr_node = *h;
-	dlistint_t *prev_node;
+	dlistint_t *new_node, *prev_node, *curr_node = *h;
 	unsigned int i = 0;
 
-	if (!new_node)
-		return (NULL);
-	/* Initialise node */
-	new_node->prev = NULL;
-	new_node->n = n;
-	new_node->next = NULL;
-	/* Special case idx = 0 */
 	if (idx == 0)
 		return (add_dnodeint(h, n));
+
 	/* Move to index */
 	while (i < idx && curr_node)
 	{
 		curr_node = curr_node->next;
 		i++;
 	}
-	/* Check if curr_node is out of bounds */
-	if (i != idx)
-	{
-		free(new_node);
+
+	/* Check if curr_node is at the end */
+	if (!curr_node && i != idx)
+		return (add_dnodeint_end(h, n));
+	
+	if (!curr_node)
 		return (NULL);
-	}
-	/* Set prev and next node */
-	prev_node = curr_node->prev;
-	/* Adjust pointers within nodes */
-	prev_node->next = new_node;
-	new_node->prev = prev_node;
+
+	dlistint_t *new_node = malloc(sizeof(dlistint_t));
+	
+	if (!new_node)
+		return (NULL);
+
+	/* Initialise node */
+	new_node->prev = curr_node->prev;
+	new_node->n = n;
 	new_node->next = curr_node;
+
+	/* Adjust pointers within nodes */
+	if (curr_node->prev)
+		prev_node->next = new_node;
 	curr_node->prev = new_node;
 
 	return (new_node);
