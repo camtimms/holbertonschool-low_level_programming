@@ -39,15 +39,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 
 	/* Move to index */
-	while (i < idx)
+	while (i < idx && curr_node)
 	{
-		if (curr_node->next == NULL)
-		{
-			free(new_node);
-			return (NULL);
-		}
 		curr_node = curr_node->next;
 		i++;
+	}
+
+	
+	/* Check if curr_node is out of bounds */
+	if (i != idx)
+	{
+		free(new_node);
+		return (NULL);
 	}
 
 	/* Set prev and next node */
