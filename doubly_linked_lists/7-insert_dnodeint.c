@@ -29,13 +29,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		i++;
 	}
 
-	/* Check if curr_node is at the end */
-	if (!curr_node && i != idx)
-		return (add_dnodeint_end(h, n));
-
-	if (!curr_node)
+	/* Check if i matches idx if not idx is out of bounds*/
+	if (i != idx)
 		return (NULL);
 
+	/* Check if node is the last element */
+	if (curr_node->next == NULL)
+		return (add_dnodeint_end(h, n));
+	
+	/* Now allocate memory for new node */
 	new_node = malloc(sizeof(dlistint_t));
 	if (!new_node)
 		return (NULL);
@@ -45,7 +47,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->n = n;
 	new_node->next = curr_node;
 
-	/* Adjust pointers within nodes */
+	/* Adjust pointers of nodes either side */
 	if (curr_node->prev)
 		prev_node->next = new_node;
 	curr_node->prev = new_node;
