@@ -34,7 +34,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	/* Check if node is the last element */
-	if (curr_node->next == NULL)
+	if (curr_node == NULL)
 		return (add_dnodeint_end(h, n));
 	
 	/* Now allocate memory for new node */
