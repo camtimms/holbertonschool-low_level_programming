@@ -30,13 +30,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (-1);
 	
 	/* Delete node start */
-	if (*head == curr_node && curr_node->next != NULL)
+	if (*head == curr_node)
 	{
-		curr_node->next->prev = NULL;
 		*head = curr_node->next;
+		if (curr_node->next != NULL)
+			curr_node->next->prev = NULL;
 	}
-	if (curr_node->next == NULL)
-		*head = NULL;
+	
 	/* Delete node middle and end */	 
 	if (curr_node->prev != NULL)
 		curr_node->prev->next = curr_node->next;
