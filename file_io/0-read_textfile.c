@@ -36,7 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	bytes_read = read(fd, buffer, sizeof(buffer));
+	bytes_read = read(fd, buffer, letters);
 	if (bytes_read < 0)
 	{
 		free(buffer);
